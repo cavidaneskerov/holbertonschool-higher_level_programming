@@ -13,10 +13,16 @@ def roman_to_int(roman_string):
     i = 0
 
     while i < len(roman_string):
-        # son simvol deyilsə və növbəti böyükdürsə çıxılır
-        if (i + 1 < len(roman_string) and
-                roman_map.get(roman_string[i], 0) < roman_map.get(roman_string[i + 1], 0)):
-            total += roman_map[roman_string[i + 1]] - roman_map[roman_string[i]]
+        # next value is larger → subtract
+        if (
+            i + 1 < len(roman_string)
+            and roman_map.get(roman_string[i], 0)
+            < roman_map.get(roman_string[i + 1], 0)
+        ):
+            total += (
+                roman_map[roman_string[i + 1]]
+                - roman_map[roman_string[i]]
+            )
             i += 2
         else:
             total += roman_map.get(roman_string[i], 0)
