@@ -55,7 +55,7 @@ class Rectangle:
         """Return the rectangle with # characters"""
         if self.width == 0 or self.height == 0:
             return ""
-        lines = f"{self.print_symbol}" * self.width for _ in range(self.height)
+        lines = (f"{self.print_symbol}" * self.width for _ in range(self.height))
         return "\n".join(lines)
 
     def __repr__(self):
