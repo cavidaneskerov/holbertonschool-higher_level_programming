@@ -5,15 +5,12 @@
 class Rectangle:
     """Defines a rectangle"""
 
-    def __init__(self, width=0, height=0, number_of_instances=0):
+    number_of_instances = 0
+
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        self.number_of_instances = number_of_instances
-
-    @property
-    def number_of_instances(self):
-        """Retrieve number_of_instance"""
-        return self.number_of_instances
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -61,10 +58,9 @@ class Rectangle:
 
     def __repr__(self):
         """Return the rectangle repr"""
-        number_of_instances += 1
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         """Delete the rectangle"""
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
