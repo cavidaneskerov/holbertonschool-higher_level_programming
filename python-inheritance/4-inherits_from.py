@@ -4,7 +4,6 @@
 
 def inherits_from(obj, a_class):
     """Return True if obj is an instance of a class that inherits from a_class"""
-    if issubclass(type(obj), a_class) and type(obj) is not a_class:
-        return True
-    else:
-        return False
+    obj_type = type(obj)
+    return issubclass(obj_type, a_class) and obj_type is not a_class
+    
