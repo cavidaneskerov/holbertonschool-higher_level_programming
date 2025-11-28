@@ -3,5 +3,5 @@
 
 
 def lookup(obj):
-  """Python inheritance """
-  return dir(obj)
+    """Python inheritance """
+    return dir(obj)
