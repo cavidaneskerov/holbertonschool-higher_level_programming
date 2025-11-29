@@ -6,7 +6,7 @@ Rectangle = __import__("9-rectangle").Rectangle
 
 class Square(Rectangle):
     """Class for creating Square"""
-    
+
     def __init__(self, size):
         """Initialize size with private atribute"""
         self.integer_validator("size", size)
@@ -15,4 +15,3 @@ class Square(Rectangle):
     def area(self):
         """Implemented area method """
         return self.__size ** 2
-   
