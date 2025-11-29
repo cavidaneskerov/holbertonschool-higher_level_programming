@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+"""Create square with the help of rectangle class """
+
+Rectangle = __import__("9-rectangle.py").Rectangle
+
+
+class Square(Rectangle):
+    """Class for creating Square"""
+    
+    def __init__(self, size):
+        """Initialize size with private atribute"""
+        self.integer_validator("size", size)
+        self.__size = size
+
+    def area(self):
+        """Implemented area method """
+        return self.__size ** 2
+   
