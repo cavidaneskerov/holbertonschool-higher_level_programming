@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Create square with the help of rectangle class """
 
-Rectangle = __import__("9-rectangle.py").Rectangle
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
