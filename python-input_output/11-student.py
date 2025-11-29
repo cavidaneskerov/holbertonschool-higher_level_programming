@@ -15,7 +15,7 @@ class Student:
         """To json function"""
         return self.__dict__
 
-   def reload_from_json(self, json):
-       """Reload from json"""
-       for key, value in json.items():
-           setattr(self, key, value)
+    def reload_from_json(self, json):
+        """Reload from json"""
+        for key, value in json.items():
+            setattr(self, key, value)
