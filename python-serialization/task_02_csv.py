@@ -3,7 +3,7 @@
 import csv, json
 
 
-def convert_csv_to_json():
+def convert_csv_to_json(csv_filename):
     """Read CSV file and write JSON data to data.json"""
     try:
         data_list = []
