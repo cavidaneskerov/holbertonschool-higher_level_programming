@@ -7,6 +7,7 @@ class CustomObject:
     """CustomObject class for example"""
 
     def __init__(self, name, age, is_student):
+        """Initialization this atributes"""
         self.name = name
         self.age = age
         self.is_student = is_student
