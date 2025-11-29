@@ -3,7 +3,7 @@
 
 
 class Student:
-"""Student class for json"""
+    """Student class for json"""
 
     def __init__(self, first_name, last_name, age):
         """def for atributes"""
