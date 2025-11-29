@@ -15,7 +15,7 @@ class Square(Rectangle):
     def area(self):
         """Implemented area method """
         return self.__size ** 2
-  
+
     def __str__(self):
         """Return the print answer"""
         return f"[Square] {self.__size}/{self.__size}"
