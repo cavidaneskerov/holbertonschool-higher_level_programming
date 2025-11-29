@@ -6,4 +6,4 @@ def write_file(filename="", text=""):
     """Function for reading"""
     with open(filename, "w") as f:
         f.write(text)
-        print(len(f.read()))
+        print(len(text))
