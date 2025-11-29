@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Write a class and change it to JSON data"""
-import json
 
 
 class Student:
