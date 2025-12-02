@@ -12,5 +12,5 @@ if __name__ == "__main__":
     encoded = parse.urlencoe(email).encode("utf-8")
     req = request.Request(url, data=encoded, methods="POST")
 
-with request.urlopen(req) as response:
-    print(response.read().decode("utf-8"))
+    with request.urlopen(req) as response:
+        print(response.read().decode("utf-8"))
