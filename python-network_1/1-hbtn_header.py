@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Fetches and displays the X-Request-Id header from a given URL.
+"""
 from urllib import request
 import sys
 if __name__ == "__main__":
