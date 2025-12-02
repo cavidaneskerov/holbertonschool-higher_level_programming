@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Restful API basic"""
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import socketserver
 import json
 """Web app for sending jsons"""
 PORT = 8000
@@ -29,8 +28,15 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps(dict_info).encode("utf-8"))
+        elif self.path == "/status":
+            self.sen_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
         else:
             self.send_response(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
             self.wfile.write(b"Endpoint not found")
 
 server = HTTPServer(("localhost", PORT), MyServer)
