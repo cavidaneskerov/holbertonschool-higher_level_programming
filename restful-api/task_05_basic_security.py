@@ -19,7 +19,6 @@ users = {
 
 
 @app.route("/login", methods = ["POST"])
-@jwt_required()
 def login():
     data = request.get_json()
     username = data.get("username")
@@ -28,7 +27,7 @@ def login():
 
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
-    access_token = create_access_token(identity=username)
+    access_token = create_access_token(identity={"username": username, "role": user["role"]})
     return jsonify({"access_token": access_token}), 200
 
 @app.route("/jwt-protected", methods = ["GET"])
