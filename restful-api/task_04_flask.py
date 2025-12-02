@@ -20,6 +20,7 @@ def data():
     usernames = list(users.key())
     return jsonify(usernames)
 @app.route("/status")
+def status():
     return "OK"
 @app.route("/users/<username>")
     if username in username:
