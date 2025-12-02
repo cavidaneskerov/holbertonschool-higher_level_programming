@@ -24,8 +24,8 @@ def status():
     return "OK"
 @app.route("/users/<username>")
 def userws(username):
-    if username in username:
-        return "User valid"
+    if username in users:
+        return jsonify(users[username])
     else:
         return jsonify(user_error), 404
 @app.route("/add_user", methods = ["POST"])
