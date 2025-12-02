@@ -23,7 +23,7 @@ def data():
 def status():
     return "OK"
 @app.route("/users/<username>")
-def userws():
+def userws(username):
     if username in username:
         return "User valid"
     else:
