@@ -13,4 +13,4 @@ if "__name__" == "__main__":
         url,
         data={"email":email},
     )
-    print(f"Your email is: {email}")
+    print(r.text)
