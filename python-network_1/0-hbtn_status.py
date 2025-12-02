@@ -2,7 +2,7 @@
 from urllib import request
 
 url = "https://intranet.hbtn.io/status"
-response = request.urlopen(url)
+with request.urlopen(url) as response:
+    data = response.read()
 
-data = response.read()
 print(data)
