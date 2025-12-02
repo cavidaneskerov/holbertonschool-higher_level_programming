@@ -2,14 +2,14 @@
 """
 Sends a POST request to a given URL with an email parameter.
 """
-import urllib
+from urllib import request, error
 import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
     try:
-        with urllib.request.urlopen(url) as response:
+        with request.urlopen(url) as response:
             print(response.read().decode("utf-8"))
 
-    except urllib.error.HTTPError as e:
+    except error.HTTPError as e:
         print("Error code:", e.code)
