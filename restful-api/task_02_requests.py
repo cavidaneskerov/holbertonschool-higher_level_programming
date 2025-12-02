@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """dfjsdfdshfjsdhfj skjsd """
 import requests
+import csv
 
 url = "https://jsonplaceholder.typicode.com/posts"
 def fetch_and_print_posts():
