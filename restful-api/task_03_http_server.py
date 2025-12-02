@@ -32,7 +32,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.sen_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
+            self.wfile.write(b"OK")
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
