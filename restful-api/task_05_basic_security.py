@@ -32,7 +32,7 @@ def login():
 
 @app.route("/jwt-protected", methods = ["GET"])
 @jwt_required()
-def jwt():
+def jwt_protected():
     current_user = get_jwt_identity()
     return "JWT Auth: Access Granted"
 
