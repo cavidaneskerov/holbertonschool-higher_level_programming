@@ -29,7 +29,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps(dict_info).encode("utf-8"))
         elif self.path == "/status":
-            self.sen_response(200)
+            self.send_response(200)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"OK")
