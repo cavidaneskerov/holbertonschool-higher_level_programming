@@ -16,7 +16,7 @@ def fetch_and_save_posts():
     """Fetch and save posts"""
     r = requests.get(url)
     if r.status_code == 200:
-        print("Status Code:" r.status_code)
+        print("Status Code: ", r.status_code)
         data = r.json()
         list = []
         for post in data:
