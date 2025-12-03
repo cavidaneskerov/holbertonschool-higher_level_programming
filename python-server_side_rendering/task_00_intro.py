@@ -34,15 +34,15 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated.")
         return
     for i, attende in enumerate(attendees, start=1):
-        name = attendees.get("name", "N/A")
-        event_title = attendees.get("event_title", "N/A")
-        event_data = attendees.get("event_date", "N/A")
-        event_location = attendees.get("event_location", "N/A")
+        name = attendee.get("name", "N/A")
+        event_title = attendee.get("event_title", "N/A")
+        event_date = attendee.get("event_date", "N/A")
+        event_location = attendee.get("event_location", "N/A")
 
-        filled = tempate.replace("{{name}}", name)\
-                        .replace("{{event_title}}", event_title)\
-                        .replace("{{event_date}}", event_date)\
-                        .replace("{{event_location}}", event_location)
+        filled = template.replace("{name}", name)\
+                        .replace("{event_title}", event_title)\
+                        .replace("{event_date}", event_date)\
+                        .replace("{event_location}", event_location)
         filename = f"output_{i}.txt"
         with open(filename, "w") as f:
             f.write(filled)
