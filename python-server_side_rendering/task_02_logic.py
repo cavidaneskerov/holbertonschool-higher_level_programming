@@ -23,9 +23,8 @@ def item():
         with open("items.json", "r") as file:
             json_file = json.load(file)
             items = json_file["items"]
-        return render_template('items.html', items=items)
     except (FileNotFoundError, json.JSONDecodeError):
-        items = [] 
-
+        items = []
+    return render_template('items.html', items=items)
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
