@@ -22,7 +22,12 @@ def item():
     try:
         with open("items.json", "r") as file:
             json_file = json.load(file)
-            items = json_file["items"]
+            if isinstance(json_file, dict):
+                items = json_file.get("items", [])
+            elif isinstance(json_file, list):
+                items = json_file
+            else:
+                items = []
     except (FileNotFoundError, json.JSONDecodeError):
         items = []
     return render_template('items.html', items=items)
