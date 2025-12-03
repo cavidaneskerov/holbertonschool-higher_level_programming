@@ -32,9 +32,8 @@ def read_sqlite(db_path="products.db"):
         cursor = conn.cursor()
         cursor.execute("SELECT id, name, category, price FROM Products")
         rows = cursor.fetchall()
-        data = [dict(row) for row in rows]
         conn.close()
-        return data
+        return [dict(row) for row in rows]
     except sqlite3.Error:
         return []
 
