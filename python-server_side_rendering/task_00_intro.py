@@ -34,10 +34,10 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated.")
         return
     for i, attende in enumerate(attendees, start=1):
-        name = attendee.get("name", "N/A")
-        event_title = attendee.get("event_title", "N/A")
-        event_date = attendee.get("event_date", "N/A")
-        event_location = attendee.get("event_location", "N/A")
+        name = attende.get("name", "N/A")
+        event_title = attende.get("event_title", "N/A")
+        event_date = attende.get("event_date", "N/A")
+        event_location = attende.get("event_location", "N/A")
 
         filled = template.replace("{name}", name)\
                         .replace("{event_title}", event_title)\
